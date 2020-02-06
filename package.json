@@ -1,5 +1,5 @@
 {
-  "name": "your-first-dynamic-web-app-with-express",
+  "name": "podcast-express",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -9,10 +9,13 @@
   },
   "dependencies": {
     "body-parser": "^1.19.0",
+    "express-handlebars": "^3.0.2",
     "express": "^4.16.4",
-    "morgan": "^1.9.1"
+    "morgan": "^1.9.1",
+    "lodash": "^4.17.11"
   },
   "devDependencies": {
-    "nodemon": "^1.18.11"
+    "nodemon": "^1.18.11",
+    "ndb": "^1.0.44"
   }
 }

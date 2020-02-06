@@ -13,9 +13,7 @@ Welcome to Podcast Express, your one stop shop for all of the coolest podcasts. 
 
 Acceptance Criteria:
 
-- When I visit `/`, I see a message "Get all your podcasts here!"
-- Below the message is an image showing hte podcast icon
-
+- When I visit `/`, I am redirected to `/groceries`"
 
 
 #### Part 2
@@ -25,21 +23,36 @@ Acceptance Criteria:
 ```
 
 Acceptance Criteria:
-- `podcastList` in `app.js` has all of our podcasts. Make sure they make their way to our webpage!
+- `podcast.json` has all of our podcasts. Make sure they make their way to our webpage!
 - When I visit `/podcasts` I should see a list of podcasts on the networks
 
+#### Part 3
+
+```no-highlight
+
+```
+
+Acceptance Criteria:
+- `podcastList` in `podcast.json` has all of our podcasts. Make sure they make their way to our webpage!
+- When I visit `/podcasts` I should see a list of podcasts names
+- When I visit `/podcasts` I should see a form on the same page to add new podcasts with fields for `title`, `description`, `network`
+- On submission the page should refresh and my new podcast should show up in the list as well as be saved in our `podcast.json`
 
 #### Part 4
 
 ```no-highlight
-As a curious friend
-I want to view my friends' favorite colors
-So that I can learn more about them
+
 ```
 
 Acceptance Criteria:
+- all of the podcast names on `/podcasts` should be links to the podcast's individual `showpage`
+- visiting `/podcasts/:podcastTitle` should show that podcasts `title`, `description`, and `network`
 
-- Use the compound data structure in `podcastList` to help retrieve more details about specific podcasts.
-- I can navigate to a distinct url and web page for each podcast. Specifically, navigating to `/podcasts/:name` should bring bring me to a page revealing full details about a specific podcast
-- Each page displays the podcast name and 
-- If the friend isn't found, the response status should return a `404` and "Not found"
+#### Part 5
+
+```no-highlight
+
+```
+
+Acceptance Criteria:
+- if a podcast is submitted without a title an error is displayed and the podcast is not added to the JSON or the list

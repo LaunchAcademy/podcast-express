@@ -4,42 +4,50 @@ import fs from 'fs'
 import logger from 'morgan'
 import bodyParser from 'body-parser'
 import { fileURLToPath } from 'url';
+import expressSession from 'express-session'
+import flash from 'flash'
+import hbsMiddleware from 'express-handlebars'
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const app = express()
 
-app.use(logger("dev"))
+app.use(logger('dev'))
 app.use(bodyParser.urlencoded({ extended: false }))
 
-app.use(express.static(path.join(__dirname, "../public")))
+app.use(express.static(path.join(__dirname, '../public')))
 
-app.listen(3000, "0.0.0.0", () => {
-  console.log("Server is listening...")
-})
+app.set('views', path.join(__dirname, '../views'))
+app.engine(
+  'hbs',
+  hbsMiddleware({
+    defaultLayout: 'default',
+    extname: '.hbs'
+  })
+)
+app.set('view engine', 'hbs')
 
+app.use(logger('dev'))
+app.use(express.json())
+app.use(
+  expressSession({
+    secret: 'Launch Academy',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false }
+  })
+)
+app.use(flash())
 // -------------------------------------------------------
 
-const podcastList = [
-  "The Daily",
-  "MBMBAM",
-  "Reply All",
-  "This American Life",
-  "Mission to Zyx"
-]
+const podcastsPath = path.join(__dirname, '../podcasts.json')
+const getPodcasts = () => {
+  const fileContents = fs.readFileSync(podcastsPath).toString()
+  return JSON.parse(fileContents)
+}
 
 
-app.get("/test", (req, res) => {
-  // res.status(200).send(`<h1>${product.title}</h1><p>${product.description}</p>`)
 
-  res.contentType("text/html")
-  .status(200)
-  .send("Hi")
-})
-
-app.get("/", (req, res) => {
-  res.send("/podcasts")
-})
 
 
 

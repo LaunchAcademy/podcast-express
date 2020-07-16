@@ -49,7 +49,8 @@ const getPodcasts = () => {
 
 
 
-
-
-
+const listeningPort = process.env.PORT || 3000
+app.listen(listeningPort, () => {
+  console.log(`Listening on ${listeningPort}`)
+})
 export default app

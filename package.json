@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "dev": "./node_modules/.bin/nodemon src/app.js",
     "dev:debug": "./node_modules/.bin/nodemon src/app.js --inspect-brk"
@@ -13,6 +14,6 @@
     "morgan": "^1.9.1"
   },
   "devDependencies": {
-    "nodemon": "^1.18.11"
+    "nodemon": "^2.0.4"
   }
 }

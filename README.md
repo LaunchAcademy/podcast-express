@@ -8,38 +8,41 @@ Welcome to Podcast Express, your one stop shop for all of the coolest podcasts. 
 #### Part 1
 
 ```no-highlight
-
+As a podcast listener
+I want to see a list of podcasts
+So I can browse for my mood
 ```
 
 Acceptance Criteria:
 
-- When I visit `/`, I see a message "Get all your podcasts here!"
-- Below the message is an image showing hte podcast icon
-
+- When I visit `/`, I am redirected to `/podcasts`"
+- Visiting `/podcasts` displays an unordered list of podcasts by name
+- The list of podcasts is read in from the provided `podcasts.json` file
 
 
 #### Part 2
 
 ```no-highlight
-
+As a Podcast Creator
+I want to add my Podcast
+So that I can make it big!
 ```
 
 Acceptance Criteria:
-- `podcastList` in `app.js` has all of our podcasts. Make sure they make their way to our webpage!
-- When I visit `/podcasts` I should see a list of podcasts on the networks
 
+- When visiting `/podcasts/new` I see a form to add a new podcast
+- Submitting the form persists the podcast to `podcasts.json`
 
-#### Part 4
+#### Part 3
 
 ```no-highlight
-As a curious friend
-I want to view my friends' favorite colors
+As a curious listener
+I want to view more details about the podcasts
 So that I can learn more about them
 ```
 
 Acceptance Criteria:
 
-- Use the compound data structure in `podcastList` to help retrieve more details about specific podcasts.
-- I can navigate to a distinct url and web page for each podcast. Specifically, navigating to `/podcasts/:name` should bring bring me to a page revealing full details about a specific podcast
-- Each page displays the podcast name and 
-- If the friend isn't found, the response status should return a `404` and "Not found"
+- When I visit `/podcasts/:name` I should see the title, description and network for the correct podcast
+- If the podcast isn't found, the response status should return a `404` and "Not found"
+- Update the index page so that the Podcast title's are links to the show page

@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "./node_modules/.bin/nodemon ./bin/www",
-    "dev:debug": "./node_modules/.bin/nodemon --inspect-brk ./bin/www",
+		"dev": "./node_modules/.bin/nodemon src/app.js",
+    "dev:debug": "./node_modules/.bin/nodemon --inspect-brk src/app.js",
     "lint": "./node_modules/.bin/eslint",
 	    "start": "node ./bin/www"
 	  },

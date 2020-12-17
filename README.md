@@ -1,7 +1,6 @@
 Welcome to Podcast Express, your one stop shop for all of the coolest podcasts. We'll need to utilize your web development skills to help prepare the site for our new users!
 
 **Tips:** _Note you will need to navigate to these endpoints by editing the url in your browser directly._ We'll need to use dynamic routing, queries, and params to accomplish these tasks. Focus first on defining your endpoint, then on rendering the required data at that route, and lastly on being able to handle for "data not found" cases.
-> Your HTML can be written out as strings and passed into your send method. See [the res.send docs](https://expressjs.com/en/4x/api.html#res.send)
 
 ### Core User Stories
 
@@ -18,7 +17,6 @@ Acceptance Criteria:
 - When I visit `/`, I am redirected to `/podcasts`"
 - Visiting `/podcasts` displays an unordered list of podcasts by name
 - The list of podcasts is read in from the provided `podcasts.json` file
-
 
 #### Part 2
 
